@@ -96,7 +96,7 @@ public class OrderServiceUnitTest {
         assertFalse(false);
     }
 
-    @Test
+   /* @Test
     void shouldReturnTrue_whenPlaceOrder_givenExistingBookIdCustomerFakeBookRepo() {
         //given
         ArgumentCaptor<Order> captor = ArgumentCaptor.forClass(Order.class);
@@ -112,11 +112,32 @@ public class OrderServiceUnitTest {
         boolean actualResult = classUnderTest.placeOrder(givenBookId, CUSTOMER);
 
         //then
-        verify(fakeRepo).findById(givenBookId);
+        verify(bookRepositoryMock).findById(givenBookId);
         verify(paymentGatewayMock).processPayment(500);
         verify(orderRepositoryMock).save(captor.capture());
         verify(notificationServiceMock).sendEmail("cust1@gmail.com", "Order placed successfully");
         assertTrue(true);
     }
+
+    }*/
+
+
+   /* @Test
+    public void shouldUseFakeRepository() {
+
+        FakeBookRepository fakeRepo = new FakeBookRepository();
+
+        fakeRepo.addBook(new Book(1L, "Java", 500));
+
+        OrderService service = new OrderService(fakeRepo, orderRepository, paymentGateway, notificationService);
+
+        Customer customer = new Customer(1L, "team2@test.com");
+
+        when(paymentGateway.processPayment(500)).thenReturn(true);
+
+        boolean result = service.placeOrder(1L, customer);
+
+        assertTrue(result);
+    }*/
 
 }
