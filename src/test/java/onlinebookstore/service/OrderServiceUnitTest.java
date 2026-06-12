@@ -6,7 +6,6 @@ import onlinebookstore.model.Order;
 import onlinebookstore.notification.NotificationService;
 import onlinebookstore.payment.PaymentGateway;
 import onlinebookstore.repository.BookRepository;
-import onlinebookstore.repository.FakeBookRepository;
 import onlinebookstore.repository.OrderRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -117,27 +116,6 @@ public class OrderServiceUnitTest {
         verify(orderRepositoryMock).save(captor.capture());
         verify(notificationServiceMock).sendEmail("cust1@gmail.com", "Order placed successfully");
         assertTrue(true);
-    }
-
-    }*/
-
-
-   /* @Test
-    public void shouldUseFakeRepository() {
-
-        FakeBookRepository fakeRepo = new FakeBookRepository();
-
-        fakeRepo.addBook(new Book(1L, "Java", 500));
-
-        OrderService service = new OrderService(fakeRepo, orderRepository, paymentGateway, notificationService);
-
-        Customer customer = new Customer(1L, "team2@test.com");
-
-        when(paymentGateway.processPayment(500)).thenReturn(true);
-
-        boolean result = service.placeOrder(1L, customer);
-
-        assertTrue(result);
     }*/
 
 }
