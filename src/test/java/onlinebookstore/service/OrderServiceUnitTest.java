@@ -119,46 +119,4 @@ public class OrderServiceUnitTest {
         assertTrue(true);
     }
 
-   /* @Test
-    void testPlaceOrder_dummyObject() {
-        //given
-        Long givenBookId = 1L;
-        Customer givenCustomer = new Customer(101L, "cust1@gmail.com");
-
-        //when
-        //then
-        assertThrows(RuntimeException.class, () -> classUnderTest.placeOrder(givenBookId, givenCustomer));
-    }
-
-    @Test
-    void testPlaceOrder_stub() {
-        //given
-        Long givenBookId = 1L;
-        Customer givenCustomer = new Customer(101L, "cust1@gmail.com");
-        when(bookRepositoryMock.findById(any())).thenReturn(Optional.of(new Book(1L, "Clean Code", 500)));
-
-        //when
-        boolean actualResult = classUnderTest.placeOrder(givenBookId, givenCustomer);
-
-        //then
-        verify(paymentGatewayMock).processPayment(500);
-    }
-
-    @Test
-    void testPlaceOrder_Mock() {
-        //given
-        Long givenBookId = 1L;
-        Customer givenCustomer = new Customer(101L, "cust1@gmail.com");
-        when(bookRepositoryMock.findById(any())).thenReturn(Optional.of(new Book(1L, "Clean Code", 500)));
-        when(paymentGatewayMock.processPayment(anyDouble())).thenReturn(true);
-
-        //when
-        boolean actualResult = classUnderTest.placeOrder(givenBookId, givenCustomer);
-
-        //then
-        verify(paymentGatewayMock).processPayment(500);
-        verify(notificationServiceMock).sendEmail("cust1@gmail.com", "Order placed successfully");
-    }*/
-
-
 }
